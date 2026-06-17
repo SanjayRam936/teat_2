@@ -60,19 +60,19 @@ function EmployeeDetail(props) {
     <Navibar />
 
     <div className="justify-center text-gray-600">
-        <div className="container">
-        <div className="mx-45 mb-10 font-bold rounded w-100  pt-10 mt-10 shadow-2xl bg-white p-6">
-          <h1 className='text-xl py-4'>Profile :  <img className='max-w-ful h-auto' src={employee.image} alt="Employee"/></h1>
+        <div className="container mx-auto">
+        <div className="mx-45 mb-10 font-bold rounded-4xl w-100  pt-10 mt-10 shadow-2xl bg-white p-6">
+          <h1 className='text-xl py-2'>  <img className='mx-23.5 h-40 w-40 object-cover rounded-full' src={employee.image} alt="Employee"/></h1>
         </div>
       </div>
-      <div className="container ">
-        <div className="mx-45 mb-10 font-bold rounded w-100  pt-10 mt-10 shadow-2xl bg-white p-6">
-          <h1 className='text-xl py-4' >Name : {employee.name}</h1>
-          <h1 className='text-xl py-4'>Department : {employee.department}</h1>
-          <h1 className='text-xl py-4'>Experience : {employee.experiance}</h1>
-          <h1 className='text-xl py-4'>Designation : {employee.designation}</h1>
-          <h1 className='text-xl py-4'>Phone No : {employee.phone}</h1>
-          <h1 className='text-xl py-4'>Email : {employee.email}</h1>
+      <div className="container mx-auto ">
+        <div className="mx-45 mb-10  font-bold rounded-2xl w-100  pt-10 mt-10 shadow-2xl bg-white p-6">
+          <div className='text gap-3 flex py-4' >Name : <h1 className='font-normal'>{employee.name}</h1></div>
+          <div className='text gap-3 flex py-4'>Department : <h1 className='font-normal'>{employee.department}</h1> </div>
+          <div className='text gap-3 flex py-4'>Experience :<h1 className='font-normal'>{employee.experiance} Years</h1> </div>
+          <div className='text gap-3 flex py-4'>Designation : <h1 className='font-normal'>{employee.designation}</h1> </div>
+          <div className='text gap-3 flex py-4'>Phone No : <h1 className='font-normal'>{employee.phone}</h1></div>
+          <div className='text gap-3 flex py-4'>Email : <h1 className='font-normal'>{employee.email}</h1></div>
         </div>
       </div>
     

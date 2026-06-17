@@ -10,7 +10,7 @@ function Form() {
   const [name, setName] = useState('')
   const [department, setDepartment] = useState('HR')  
   const [designation, setDesignation] = useState('')
-  const [experiance, setExperiance] = useState('')
+  const [experiance, setExperiance] = useState(Number)
   const [phone,setPhone] = useState('')
   const [email,setEmail] = useState('')
   const clearStorage = () => {
@@ -33,7 +33,7 @@ function Form() {
 
        const reader = new FileReader();
        reader.onloadend=()=>{
-        setImage(reader.reault);
+        setImage(reader.result);
        }
        reader.readAsDataURL(file);
       
@@ -67,12 +67,12 @@ function Form() {
   return (
     <div className='text-gray-600'>
       <Navibar/>
-        <div className='container'>
-            <form onSubmit={onSubmit} className='mx-45 mb-10 w-220 rounded pt-10 mt-10 shadow-2xl bg-white p-6'>
+        <div className='container mx-auto'>
+            <form onSubmit={onSubmit} className='mx-21 mb-10 w-200 rounded-3xl h-auto mt-10 shadow-2xl bg-white py-10 '>
         <h1 className='text-2xl font-bold ml-25 mt-0'>Employee Payroll Form</h1>
         <div className='ml-25 font-medium mt-10'>
           <label>Name
-            <input value={name} onChange={e => setName(e.target.value)} type="text" placeholder='   Employee Name' className='bg-gray-50 ml-25 rounded-[5px] border-[0.5px] border-gray-600 shadow-2xl w-100 h-10 'required/>
+            <input value={name} onChange={e => setName(e.target.value)} type="text" placeholder='   Employee Name' className='bg-gray-50 ml-25 rounded-[5px] border-[0.5px] border-gray-600 shadow-2xl w-80 h-10 'required/>
           </label>
         </div>
 
@@ -147,17 +147,17 @@ function Form() {
 
         <div className='ml-25 font-medium mt-10'>
           <label>Experiance
-            <input value={experiance} onChange={e => setExperiance(e.target.value)} type="text" placeholder='   Year of Experiance' className='bg-gray-50 ml-16.5 rounded-[5px] border-[0.5px] border-gray-600 shadow-2xl w-100 h-10 'required/>
+            <input value={experiance} onChange={e => setExperiance(e.target.value)} type="number"  placeholder='   Year of Experiance' className='bg-gray-50 ml-16.5 rounded-[5px] border-[0.5px] border-gray-600 shadow-2xl w-80 h-10 'required/>
           </label>
         </div>
         <div className='ml-25 font-medium mt-10'>
           <label>Phone No
-            <input value={phone} onChange={e => setPhone(e.target.value)} type="text" placeholder='   Phone no' className='bg-gray-50 ml-18.5 rounded-[5px] border-[0.5px] border-gray-600 shadow-2xl w-100 h-10 'required/>
+            <input value={phone} onChange={e => setPhone(e.target.value)} type="text" placeholder='  Phone no' maxLength={10} className='bg-gray-50 ml-18.5 rounded-[5px] border-[0.5px] border-gray-600 shadow-2xl w-80 h-10 'required/>
           </label>
         </div>
         <div className='ml-25 font-medium mt-10'>
           <label>Email
-            <input value={email} onChange={e => setEmail(e.target.value)} type="email" maxLength={20} placeholder='   Employee Email' className='bg-gray-50 ml-26.5 rounded-[5px] border-[0.5px] border-gray-600 shadow-2xl w-100 h-10 'required/>
+            <input value={email} onChange={e => setEmail(e.target.value)} type="email" maxLength={20} placeholder='   Employee Email' className='bg-gray-50 ml-26.5 rounded-[5px] border-[0.5px] border-gray-600 shadow-2xl w-80 h-10 'required/>
           </label>
         </div>
 
