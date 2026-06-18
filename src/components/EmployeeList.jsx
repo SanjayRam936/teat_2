@@ -7,6 +7,7 @@ import Form from './Form';
 import sear from '../assets/search.svg'
 import Navibar from './Navibar';
 import dot from '../assets/dot.svg'
+//onClick={()=> navigate(`/employee_detail/${employee.id}`)}
 
 function EmploeeList(props) {
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ function EmploeeList(props) {
             name:'Sanjay',
             department:'Development',
             designation:'Frontend Developer',
-            experiance:'3 Years',
+            experiance:'3',
             phone:'9840206776',
             email:'sanjay@gmail.com',
             image:'',
@@ -30,7 +31,7 @@ function EmploeeList(props) {
             name:'Sanjay',
             department:'Development',
             designation:'Frontend Developer',
-            experiance:'3 Years',
+            experiance:'3',
             phone:'9840206776',
             email:'sanjay@gmail.com',
             image:'',
@@ -40,7 +41,7 @@ function EmploeeList(props) {
             name:'Sanjay',
             department:'Development',
             designation:'Frontend Developer',
-            experiance:'3 Years',
+            experiance:'3',
             phone:'9840206776',
             email:'sanjay@gmail.com',
             image:'',
@@ -80,10 +81,10 @@ function EmploeeList(props) {
     
   return (
     
-    <div className='bg-gray-50'>
+    <div className='bg-[#FDF6E3] h-149'>
         <Navibar/>
       <div className='justify-between flex p-5 px-10'>
-        <div className='text-gray-600 text-2xl font-bold'>Employee Details</div>
+        <div className='text-#12385F text-2xl font-bold'>Employee Details</div>
         <div className='flex gap-4'>
           <button 
           onClick={()=>setOpen(!open)}
@@ -103,42 +104,42 @@ function EmploeeList(props) {
           
         </div>
       </div>
-      <div className='my-10 shadow-2xl border-[0.1px] rounded-t mx-20 w-285 text-center'>
+      <div className='my-10 shadow-2xl border-[0.1px] rounded-t mx-25 w-270 text-center'>
         
-        <div className='bg-gray-600 text-center  rounded-t text-white flex font-sansfamily text-[17px] relative py-2'>
-            <div className='ml-5 w-7'><h1>S.No</h1></div>
-            <div className='ml-20 w-30'><h1>Name</h1></div>
-            <div className='ml-30 w-20'><h1>Department</h1></div>
-            <div className='ml-28 w-40'><h1>Designation</h1></div>
-            <div className='ml-28 w-20'><h1>Experiance</h1></div>
-            <div className='ml-19 w-20'><h1>Action</h1></div>
+        <div className='bg-[#12385F] text-center  rounded-t text-white flex font-sansfamily text-[17px] relative py-2'>
+            <div className='ml-5 w-7'><p>S.No</p></div>
+            <div className='ml-20 w-30'><p>Name</p></div>
+            <div className='ml-30 w-20'><p>Department</p></div>
+            <div className='ml-28 w-40'><p>Designation</p></div>
+            <div className='ml-28 w-20'><p>Experience</p></div>
+            <div className='ml-19 w-20'><p>Action</p></div>
         </div>
-        <div className='w-260 h-[2px] bg-amber-100'></div>
+        <div className='w-268 h-[2px] bg-amber-100'></div>
         {Employee.map((employee)=>{
             return(
                 <div className='rounded-2xl'>
-                    <div onClick={()=> navigate(`/employee_detail/${employee.id}`)} key={employee.id} className={employee.id % 2 == 0 ? 'bg-white text-gray-600    flex hover:bg-gray-200 relative py-2' : 'text-gray-600    flex hover:bg-gray-200 relative py-2 bg-gray-100' }>
-                    <div className='ml-5 w-7'>{employee.id}</div>
+                    <div key={employee.id} className={employee.id % 2 == 0 ? 'bg-white text-[#12385F]   flex  relative py-2' : 'text-[#12385F]    flex relative py-2 bg-gray-100' }>
+                    <div onClick={()=> navigate(`/employee_detail/${employee.id}`)} className='ml-5 hover:bg-gray-200 w-7'>{employee.id}</div>
                     <div className='ml-20 w-30'><img src={employee.image} alt="Employee" className="w-7 absolute top-1.5 left-23 h-7 object-cover rounded-full"/>{employee.name}</div>
                     <div className='ml-30 w-20'>{employee.department}</div>
                     <div className='ml-28 w-40'>{employee.designation}</div>
                     <div className='ml-28 w-20'>{employee.experiance} Years</div>
-                    <div onClick={()=>setClick(!click)} className='ml-25 relative w-15 py-1 px-3 justify-center rounded-2xl shadow-2xl'>
-                        <img className='ml-1 w-5' src={dot} alt="" />
+                    <div className='relative hover:bg-gray-200 ml-25 w-7 h-7 rounded-full'>
+                        <button className='w-15 py-1 px-1' onClick={()=>setClick(!click)}><img className='w-5' src={dot} alt="" /></button>
                         {click && (
-                            <div className='bg-white w-auto h-auto'>
-                                <div className='bg-white w-auto h-auto'>
-                                    <img className=' absolute top-0 left-0 w-6' src={pen} alt="" onClick={(e) => e.stopPropagation()} />
-                                </div>
-                                <div className='bg-white w-auto h-auto'>
-                                    <img onClick={(e) => deleteEmployee(employee.id, e)} className='w-6' src={bin} alt="" />
-                                </div>
+                            <div onClick={()=>setClick(!click)} className="absolute top-0 left-0 w-15 flex bg-white text-white shadow-xl rounded-lg px-2 py-1 z-50">
+                                
+                                    <img className=' w-5' src={pen} alt="" onClick={(e) => e.stopPropagation()} />
+                               
+                                
+                                    <img onClick={(e) => deleteEmployee(employee.id, e)} className='w-5' src={bin} alt="" />
+                               
                             </div>
                             
                         )}   
                     </div>
                 </div>
-                <div className='w-260 h-[2px] bg-amber-100'></div>
+                <div className='w-268 h-[2px] bg-amber-100'></div>
                 </div>
                 
             )
